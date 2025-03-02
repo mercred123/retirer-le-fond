@@ -53,6 +53,7 @@ Le code est structuré pour être simple à comprendre et à modifier. Voici une
   - `tkinter` (généralement inclus dans l'installation Python)
   - `rembg` : `pip install rembg`
   - `Pillow` : `pip install Pillow`
+  - `onnxruntime` : `pip install onnxruntime`
 
 ### Lancer l'application
 
