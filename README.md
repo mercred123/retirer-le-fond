@@ -9,12 +9,6 @@ Ce projet permet de supprimer le fond d'une image de manière simple et rapide �
 - Supprimer automatiquement l'arrière-plan de l'image sélectionnée.
 - Sauvegarder l'image traitée dans un fichier au format PNG.
 
-## Technologies utilisées
-
-- **Tkinter** : Bibliothèque Python pour l'interface graphique.
-- **Rembg** : Bibliothèque pour la suppression d'arrière-plan des images.
-- **Pillow (PIL)** : Bibliothèque pour la gestion et l'affichage des images.
-
 ## Comment utiliser l'application ?
 
 1. Exécutez le fichier Python `mai.py`.
