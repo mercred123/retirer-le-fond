@@ -58,7 +58,7 @@ Le code est structuré pour être simple à comprendre et à modifier. Voici une
 
 1. Clonez ce dépôt :
    ```bash
-   git clone https://github.com/votre-utilisateur/suppression-arriere-plan.git
+   git clone https://github.com/mercred123/retirer-le-fond.git
 
 
 
