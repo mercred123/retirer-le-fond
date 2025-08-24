@@ -1,63 +1,77 @@
-# Suppression d'Arrière-Plan d'Images avec Tkinter et Rembg
+# Suppression d'Arrière-Plan d'Images avec CustomTkinter et Rembg
 
-Ce projet permet de supprimer le fond d'une image de manière simple et rapide à l'aide de l'outil **Rembg**, une bibliothèque Python spécialisée dans la suppression de l'arrière-plan des images. L'application utilise **Tkinter** pour créer une interface graphique, permettant à l'utilisateur de choisir une image, d'apercevoir l'image sélectionnée et de sauvegarder l'image après la suppression de son fond.
+Ce projet permet de supprimer le fond d'une image de manière simple et rapide à l'aide de l'outil **Rembg**, une bibliothèque Python spécialisée dans la suppression de l'arrière-plan des images.  
+L'application utilise **CustomTkinter** pour créer une interface graphique moderne et intuitive, permettant à l'utilisateur de choisir une image, d'apercevoir l'image sélectionnée et de sauvegarder l'image après la suppression de son fond.
 
-## Fonctionnalités
+---
 
-- Choisir une image depuis votre ordinateur.
-- Visualiser l'aperçu de l'image choisie.
-- Supprimer automatiquement l'arrière-plan de l'image sélectionnée.
-- Sauvegarder l'image traitée dans un fichier au format PNG.
+## 🚀 Fonctionnalités
 
-## Comment utiliser l'application ?
+- 📂 Choisir une image depuis votre ordinateur.  
+- 👀 Visualiser l'aperçu de l'image choisie directement dans l'application.  
+- ✂️ Supprimer automatiquement l'arrière-plan de l'image sélectionnée.  
+- 💾 Sauvegarder l'image traitée au format **PNG** avec fond transparent.  
 
-1. Exécutez le fichier Python `mai.py`.
-2. Cliquez sur le bouton **Choisir une image** pour sélectionner une image depuis votre ordinateur.
-3. Une fois l'image choisie, un aperçu de l'image s'affichera à l'écran.
-4. Cliquez sur le bouton **Enlever le fond** pour supprimer l'arrière-plan de l'image.
-5. Un explorateur de fichiers s'ouvrira pour vous permettre de choisir où sauvegarder l'image sans son arrière-plan.
+---
 
-## Comment comprendre et modifier le code ?
+## 🖥️ Utilisation
 
-Le code est structuré pour être simple à comprendre et à modifier. Voici une explication détaillée des principales parties :
+1. Exécutez le fichier Python `mai.py`.  
+2. Cliquez sur le bouton **Choisir une image** pour sélectionner une image depuis votre ordinateur.  
+3. Un aperçu de l’image choisie s’affichera dans la fenêtre (sans texte, uniquement l’image).  
+4. Cliquez sur le bouton **Enlever le fond** pour supprimer l’arrière-plan.  
+5. Un explorateur de fichiers s’ouvrira pour vous permettre d’enregistrer l’image sans fond.  
+
+---
+
+## ⚙️ Structure et explications du code
 
 ### 1. **Choisir une image**
-   - La fonction `choisir_image()` utilise un dialogue de fichier (`filedialog.askopenfilename`) pour permettre à l'utilisateur de choisir une image.
-   - Si une image est choisie, la fonction `image_preview()` est appelée pour afficher un aperçu de l'image.
+- La fonction `choisir_image()` ouvre un explorateur via `filedialog.askopenfilename`.  
+- Si une image est choisie, elle est transmise à `image_preview()`.  
 
-### 2. **Affichage de l'image**
-   - La fonction `image_preview()` charge l'image choisie à l'aide de **Pillow**, la redimensionne pour l'aperçu et l'affiche dans une **Label** de Tkinter.
-   
-### 3. **Suppression du fond**
-   - La fonction `enlever_fond()` lit l'image sélectionnée en mode binaire, utilise la bibliothèque **Rembg** pour supprimer l'arrière-plan, et enregistre l'image résultante au format PNG.
+### 2. **Aperçu de l’image**
+- La fonction `image_preview()` utilise **Pillow** pour ouvrir et redimensionner l’image.  
+- L’image est ensuite affichée dans un `CTkLabel` avec **CTkImage** (meilleure compatibilité avec les écrans HD/4K).  
+
+### 3. **Suppression de l’arrière-plan**
+- La fonction `enlever_fond()` lit l’image en binaire.  
+- Elle utilise **Rembg** pour retirer l’arrière-plan.  
+- L’utilisateur choisit ensuite l’emplacement d’enregistrement via `filedialog.asksaveasfilename`.  
 
 ### 4. **Interface graphique**
-   - L'interface est construite avec Tkinter, qui contient deux boutons principaux : un pour choisir une image et un pour enlever l'arrière-plan.
-   - Les boutons et autres éléments graphiques sont stylisés pour offrir une expérience utilisateur agréable.
+- L’interface est construite avec **CustomTkinter** :  
+  - Un bouton pour sélectionner une image.  
+  - Un aperçu central de l’image.  
+  - Un bouton pour enlever le fond et sauvegarder.  
 
 ### 5. **Gestion des erreurs**
-   - Des boîtes de dialogue d'erreur sont affichées si l'utilisateur tente d'effectuer une action sans avoir sélectionné une image ou si une erreur se produit lors du traitement de l'image.
+- Des boîtes de dialogue s’affichent si aucune image n’est choisie ou en cas de problème lors du traitement.  
 
-## Installation
+---
+
+## 📦 Installation
 
 ### Prérequis
 
-- Python 3.x
-- Les bibliothèques suivantes doivent être installées :
-  - `tkinter` (généralement inclus dans l'installation Python)
-  - `rembg` : `pip install rembg`
-  - `Pillow` : `pip install Pillow`
-  - `onnxruntime` : `pip install onnxruntime`
+- Python **3.9+**  
+- Bibliothèques nécessaires :  
 
-### Lancer l'application
+```bash
+pip install rembg pillow customtkinter onnxruntime
+```
+(Tkinter est généralement inclus par défaut avec Python)
 
-1. Clonez ce dépôt :
-   ```bash
-   git clone https://github.com/mercred123/retirer-le-fond.git
+---
 
+### Lancer l’application:
 
+```bash
+python mai.py
+```
+---
 
+### 🤝 Contributions
 
-## Contributions
-
-Les contributions sont les bienvenues ! Si vous souhaitez améliorer cette application ou ajouter de nouvelles fonctionnalités, n'hésitez pas à ouvrir une pull request.
+Les contributions sont les bienvenues !
+Si vous souhaitez améliorer cette application n’hésitez pas à ouvrir une pull request.
